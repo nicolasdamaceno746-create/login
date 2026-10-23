@@ -1,0 +1,117 @@
+/* CSS Login */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+    .grade{
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+}
+    .cartao{
+        background-color: aquamarine;
+        padding: 30px;
+        width: 400px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 15px;
+}
+    form{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+ }
+
+            /* CSS Dashboard */
+
+.galeria {
+    min-height: 100vh;
+    display: grid;
+
+    grid-template-columns: 180px repeat(4, 1fr);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+        "header header header header header"
+        "nav section1 section2 section3 section4"
+        "nav relatorio relatorio atividades atividades";
+}
+
+.galeria > div {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.cabecalho {
+    grid-area: header;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+.menu {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: lightblue;
+}
+
+.secao1 {
+    grid-area: section1;
+}
+
+.secao2 {
+    grid-area: section2;
+}
+
+.secao3 {
+    grid-area: section3;
+}
+
+.secao4 {
+    grid-area: section4;
+}
+
+.relatorio {
+    grid-area: relatorio;
+}
+
+.atividades {
+    grid-area: atividades;
+}
+
+.secao1, .secao2, .secao3, .secao4,
+.relatorio, .atividades {
+    background-color: azure;
+}
+
+@media (min-width: 576px) and (max-width: 900px) {
+    .galeria {
+        grid-template-columns: 160px repeat(2, 1fr);
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "header header header"
+            "nav section1 section2"
+            "nav section3 section4"
+            "nav relatorio relatorio"
+            "nav atividades atividades";
+    }
+}
+@media (max-width: 575px) {
+    .galeria {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "nav"
+            "section1"
+            "section2"
+            "section3"
+            "section4"
+            "relatorio"
+            "atividades";
+    }
+}
